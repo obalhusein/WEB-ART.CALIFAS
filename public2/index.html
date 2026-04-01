@@ -10,6 +10,32 @@
   <meta name="keywords" content="artesanía andalusí mayorista, souvenirs córdoba mayorista, artesanía mezquita, souvenirs andalucía al por mayor">
   <meta name="author" content="Artesanía Los Califas">
 
+  <!--
+    Canonical URL (cambia por tu dominio real)
+  <link rel="canonical" href="https://www.artesanialoscalifas.es/">
+    Open Graph completo para compartir en redes
+  <meta property="og:url" content="https://www.artesanialoscalifas.es/">
+  <meta property="og:image" content="https://www.artesanialoscalifas.es/images/og-preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+    WhatsApp y Twitter
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artesanía Los Califas — Mayorista Andalusí">
+  <meta name="twitter:description" content="Artesanía andalusí exclusiva para tiendas, hoteles y museos.">
+  <meta name="twitter:image" content="https://www.artesanialoscalifas.es/images/og-preview.webp">
+  -->  
+
+  <!-- Favicon (crea un favicon.ico y ponlo en la raíz) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Idioma y codificación correcta para Google -->
+  <meta http-equiv="content-language" content="es">
+
   <!-- Open Graph (WhatsApp, LinkedIn, redes sociales) -->
   <meta property="og:title" content="Artesanía Los Califas — Mayorista Andalusí">
   <meta property="og:description" content="Artesanía andalusí exclusiva para tiendas, hoteles y museos. Diseños únicos inspirados en el arte andalusí.">
@@ -1529,6 +1555,376 @@
        que apunten a tus fotos reales:
        <img src="./images/producto-01.webp" alt="...">
     ============================================ */
+
+    /* ============================================
+      MEJORAS RESPONSIVE MÓVIL Y TABLET
+      Añadir al final del bloque <style>
+    ============================================ */
+
+    /* --- TÁCTIL: área mínima de toque 44px --- */
+    @media (max-width: 1024px) {
+      .btn {
+        min-height: 52px;
+        padding: 1rem 1.6rem;
+        font-size: 0.88rem;
+      }
+
+      .nav-cta {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Espaciado extra entre botones del hero en táctil */
+      .hero-buttons {
+        gap: 1rem;
+      }
+
+      /* Footer links más fáciles de pulsar */
+      .footer-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+      }
+
+      /* Links de nav móvil */
+      .mobile-menu a {
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 0;
+      }
+    }
+
+    /* --- TABLET: 601px – 1024px --- */
+    @media (min-width: 601px) and (max-width: 1024px) {
+
+      /* Hero: apilado vertical en tablet también */
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 76px;
+      }
+
+      .hero-left {
+        padding: 3.5rem 3rem 2rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-desc {
+        max-width: 560px;
+      }
+
+      .hero-buttons {
+        max-width: 440px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-buttons .btn {
+        flex: 1;
+        min-width: 220px;
+      }
+
+      .hero-trust {
+        justify-content: center;
+      }
+
+      .hero-right {
+        padding: 1.5rem 3rem 3.5rem;
+        background: var(--cream-dark);
+      }
+
+      .hero-product-showcase {
+        max-width: 500px;
+      }
+
+      /* Why grid: 2 columnas en tablet */
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Products: 2 columnas en tablet */
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-card:first-child {
+        grid-column: span 2;
+      }
+
+      /* Process: columna única con línea lateral */
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .process-step {
+        padding: 2rem 2rem 2rem 5rem;
+        border-left: 1px solid rgba(184,146,42,0.25);
+        position: relative;
+        margin-left: 2rem;
+      }
+
+      .process-step:last-child {
+        border-left-color: transparent;
+      }
+
+      .step-num {
+        position: absolute;
+        left: -1.5rem;
+        top: 1.8rem;
+      }
+
+      /* Testimonios: 2 columnas */
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Contacto: columna única */
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      /* Footer: 2 columnas */
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* --- MÓVIL: hasta 600px --- */
+    @media (max-width: 600px) {
+
+      /* Hero */
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .hero-left {
+        padding: 2.5rem 1.5rem 2rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+        line-height: 1.15;
+      }
+
+      .hero-desc {
+        font-size: 0.95rem;
+      }
+
+      /* Botones del hero: apilados y ancho completo */
+      .hero-buttons {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.82rem;
+        padding: 1rem 1rem;
+      }
+
+      /* WhatsApp más visible en móvil */
+      .btn-secondary {
+        background: #25D366;
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background: #1da851;
+        box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+      }
+
+      .hero-trust {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        text-align: center;
+      }
+
+      .hero-right {
+        padding: 1.5rem;
+        background: var(--cream-dark);
+      }
+
+      .hero-product-showcase {
+        max-width: 100%;
+      }
+
+      /* Hero badge más pequeño en móvil */
+      .hero-badge {
+        right: -0.5rem;
+        bottom: -1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .hero-badge-num {
+        font-size: 1.6rem;
+      }
+
+      /* Secciones: menos padding en móvil */
+      .section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .contact-section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      footer {
+        padding: 2.5rem 1.5rem 1.5rem;
+      }
+
+      /* Logos bar compacta */
+      .logos-bar {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+      }
+
+      .logos-grid {
+        gap: 1.5rem;
+      }
+
+      .logo-item-name {
+        font-size: 0.6rem;
+      }
+
+      /* Why: columna única */
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Products: columna única */
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card:first-child {
+        grid-column: span 1;
+      }
+
+      .product-card:first-child .product-img-wrap {
+        height: 220px;
+      }
+
+      /* Section header en productos: apilado */
+      .products-section .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      /* Process: columna única simple */
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .process-step {
+        padding: 0;
+      }
+
+      /* Testimonios: columna única */
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Formulario: columna única */
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: span 1;
+      }
+
+      .contact-form-wrap {
+        padding: 2rem 1.2rem;
+      }
+
+      /* Footer: columna única */
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+      }
+
+      /* Nav logo más compacto */
+      .nav-logo-name {
+        font-size: 0.95rem;
+      }
+
+      .nav-logo-sub {
+        font-size: 0.6rem;
+      }
+
+      /* Títulos de sección más pequeños en móvil */
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      /* WhatsApp flotante más pequeño */
+      .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+
+    /* --- MÓVIL MUY PEQUEÑO: hasta 380px (iPhone SE, etc.) --- */
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 1.65rem;
+      }
+
+      .nav-inner {
+        padding: 0 1rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .contact-form-wrap {
+        padding: 1.5rem 1rem;
+      }
+    }
+
   </style>
 </head>
 <body>
