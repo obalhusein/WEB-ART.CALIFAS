@@ -98,7 +98,7 @@ por una etiqueta `<img>` real. Ejemplo:
        style="width:100%; height:100%; object-fit:cover; display:block;">
 </picture>
 
-
+```
 --------------------------------------------------------------------------------------------
 
 ## 3. Actualizar datos de contacto
