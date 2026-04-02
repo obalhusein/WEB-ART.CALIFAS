@@ -1,3 +1,15 @@
+GITHUB
+token: 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
+
+Si en algún momento añades o modificas archivos,
+el proceso para actualizar GitHub siempre es el mismo tres pasos:
+	git add .
+	git commit -m "describe qué cambiaste"
+	git push origin main
+
+
+PASOS A SEGUIR CREADOS POR CLAUDE
+
 # Artesanía Los Califas — Landing Page
 
 ## Estructura de archivos
@@ -17,7 +29,7 @@ artesania-los-califas/
 └── README.md
 ```
 
----
+-----------------------------------------------------------------------------------------
 
 ## 1. Convertir fotos a WebP (desde WSL)
 
@@ -34,7 +46,7 @@ for f in fotos-originales/*.jpg; do
 done
 ```
 
----
+--------------------------------------------------------------------------------------------
 
 ## 2. Sustituir placeholders por imágenes reales
 
@@ -53,9 +65,42 @@ por una etiqueta `<img>` real. Ejemplo:
 <img src="./images/productos-hero.webp"
      alt="Colección de artesanía andalusí Los Califas"
      style="width:100%; height:auto; display:block; object-fit:cover;">
-```
 
----
+`````````imagenes de portadas
+<!-- ELIMINA ESTO: -->
+<div class="hero-img-placeholder">
+  ...todo el contenido interior...
+</div>
+
+<!-- PON ESTO EN SU LUGAR: --> Para dispositivos variados usa lo siguiente
+<picture>
+  <source media="(max-width: 480px)"
+          srcset="./images/productos-hero-mobile.webp">
+  <source media="(max-width: 900px)"
+          srcset="./images/productos-hero-tablet.webp">
+  <img src="./images/productos-hero.webp"
+       alt="Colección de artesanía andalusí Los Califas"
+       style="width:100%; height:100%; object-fit:cover; display:block;">
+</picture>
+
+```````` imagenes de los productos
+<!-- ELIMINA ESTO: -->
+<div class="product-placeholder p-bg-1" style="height:100%; ...">
+  <div style="font-size:5rem; opacity:0.3;">🪟</div>
+</div>
+
+<!-- PON ESTO EN SU LUGAR: --> usar loading="lazy" para que en los dispositivos moviles se vea más fluido
+<picture>
+  <source media="(max-width: 480px)"
+          srcset="./images/marco-grande-mobile.webp">
+  <img src="./images/marco-grande.webp"
+       alt="Marco decorativo andalusí grande"
+       loading="lazy"
+       style="width:100%; height:100%; object-fit:cover; display:block;">
+</picture>
+
+
+--------------------------------------------------------------------------------------------
 
 ## 3. Actualizar datos de contacto
 
@@ -64,7 +109,8 @@ En `index.html`, busca y reemplaza:
 - `info@artesanialoscalifas.es` → tu email real
 - `https://wa.me/34600000000` → tu número en formato internacional sin espacios ni `+`
 
----
+
+-----------------------------------------------------------------------------------------------
 
 ## 4. Subir a GitHub (desde WSL)
 
@@ -81,7 +127,7 @@ git branch -M main
 git push -u origin main
 ```
 
----
+-----------------------------------------------------------------------------------------------
 
 ## 5. Conectar Netlify
 
@@ -93,7 +139,7 @@ git push -u origin main
 
 Cada `git push` actualizará la web automáticamente.
 
----
+-----------------------------------------------------------------------------------------------
 
 ## 6. Configurar Netlify Forms
 
@@ -101,7 +147,7 @@ El formulario ya tiene los atributos necesarios (`data-netlify="true"`).
 En el dashboard de Netlify: **Forms** → verás los envíos ahí.
 Puedes configurar notificaciones por email en: Site Settings → Forms → Notifications.
 
----
+-----------------------------------------------------------------------------------------------
 
 ## 7. Dominio propio (opcional pero recomendado)
 
