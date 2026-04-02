@@ -1,5 +1,4 @@
 GITHUB
-token: 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
 
 Si en algún momento añades o modificas archivos,
 el proceso para actualizar GitHub siempre es el mismo tres pasos:
